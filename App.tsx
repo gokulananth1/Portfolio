@@ -446,7 +446,7 @@ const App: React.FC = () => {
                         alt="Gokul A Profile" 
                         className="w-full h-auto rounded-[2rem] grayscale hover:grayscale-0 transition-all duration-700 object-cover aspect-[4/5]"
                         onError={(e) => {
-                          (e.target as HTMLImageElement).src = "Portfolio/Formal Wear Image.png";
+                          (e.target as HTMLImageElement).src = "Formal Wear Image.png";
                         }}
                       />
                     </div>
