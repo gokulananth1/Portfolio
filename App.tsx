@@ -163,8 +163,8 @@ const Navbar = () => {
           </div>
 
           <motion.a 
-            href="Gokul A CV (Java and DSS).pdf"
-            download="Gokul A CV (Java and DSS).pdf"
+            href="https://drive.google.com/file/d/180k4MmaXn4850b1lT6nWv5fpXB9wDFHv/view?usp=sharing"
+            download="https://drive.google.com/file/d/180k4MmaXn4850b1lT6nWv5fpXB9wDFHv/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
@@ -416,8 +416,8 @@ const App: React.FC = () => {
                   <ChevronRight size={20} />
                 </button>
                 <a 
-                  href="./Gokul_A_Resume.pdf"
-                  download="Gokul_A_Resume.pdf"
+                  href="https://drive.google.com/file/d/180k4MmaXn4850b1lT6nWv5fpXB9wDFHv/view?usp=sharing"
+                  download="https://drive.google.com/file/d/180k4MmaXn4850b1lT6nWv5fpXB9wDFHv/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-10 py-5 glass hover:bg-white/5 rounded-2xl font-black text-lg transition-all hover:scale-105 border border-white/10 flex items-center gap-2 cursor-pointer"
@@ -442,11 +442,11 @@ const App: React.FC = () => {
                   <div className="glass p-3 rounded-[2.5rem] relative">
                     <div className="overflow-hidden rounded-[2rem] shadow-2xl relative">
                       <img 
-                        src="/Formal Wear Image.png" 
+                        src="https://missing-jade-j1eoi73j6h.edgeone.app/Formal%20Wear%20Image.png" 
                         alt="Gokul A Profile" 
                         className="w-full h-auto rounded-[2rem] grayscale hover:grayscale-0 transition-all duration-700 object-cover aspect-[4/5]"
                         onError={(e) => {
-                          (e.target as HTMLImageElement).src = "Formal Wear Image.png";
+                          (e.target as HTMLImageElement).src = "https://missing-jade-j1eoi73j6h.edgeone.app/Formal%20Wear%20Image.png";
                         }}
                       />
                     </div>
