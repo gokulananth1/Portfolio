@@ -1,0 +1,6 @@
+/* Gokul A Portfolio Global Styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}

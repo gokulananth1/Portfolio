@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gokul A - Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1e293b;
+      background: #f8fafc;
+      padding: 32px 16px;
+      line-height: 1.5;
+    }
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 48px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+    header {
+      border-bottom: 2px solid #8b5cf6;
+      padding-bottom: 20px;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: 30px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+    }
+    .subtitle {
+      font-size: 14px;
+      font-weight: 600;
+      color: #7c3aed;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 4px;
+    }
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 12px;
+      font-size: 13px;
+      color: #475569;
+    }
+    .contact-row a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    .contact-row a:hover {
+      text-decoration: underline;
+    }
+    .section {
+      margin-bottom: 24px;
+    }
+    .section-title {
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #0f172a;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 6px;
+      margin-bottom: 14px;
+    }
+    .item {
+      margin-bottom: 14px;
+    }
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-weight: 700;
+      color: #0f172a;
+      font-size: 14px;
+    }
+    .item-sub {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: #64748b;
+      margin-top: 2px;
+      font-weight: 500;
+    }
+    .item-desc {
+      font-size: 13px;
+      color: #334155;
+      margin-top: 6px;
+    }
+    ul {
+      margin-left: 20px;
+      margin-top: 4px;
+      font-size: 13px;
+      color: #334155;
+    }
+    li {
+      margin-bottom: 4px;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 8px 16px;
+      font-size: 13px;
+    }
+    .skills-cat {
+      font-weight: 700;
+      color: #1e293b;
+    }
+    .skills-list {
+      color: #334155;
+    }
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      border-radius: 9999px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .print-bar {
+      max-width: 860px;
+      margin: 0 auto 20px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .btn {
+      padding: 10px 20px;
+      background: #7c3aed;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+    .btn:hover { background: #6d28d9; }
+    .btn-secondary {
+      background: #e2e8f0;
+      color: #1e293b;
+    }
+    .btn-secondary:hover { background: #cbd5e1; }
+    @media print {
+      body { background: white; padding: 0; }
+      .page { box-shadow: none; padding: 0; }
+      .print-bar { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="print-bar">
+    <a href="/" class="btn btn-secondary">← Back to Portfolio</a>
+    <button onclick="window.print()" class="btn">🖨️ Print / Save as PDF</button>
+  </div>
+
+  <div class="page">
+    <header>
+      <h1>GOKUL A</h1>
+      <div class="subtitle">Computer Science Engineer | Full Stack Java & Web Developer</div>
+      <div class="contact-row">
+        <span>📧 <a href="mailto:gokul72700@gmail.com">gokul72700@gmail.com</a></span>
+        <span>🔗 <a href="https://www.linkedin.com/in/gokula23/" target="_blank">linkedin.com/in/gokula23/</a></span>
+        <span>🐙 <a href="https://github.com/gokulananth1" target="_blank">github.com/gokulananth1</a></span>
+        <span>⚡ <a href="https://leetcode.com/u/gokulananth1/" target="_blank">leetcode.com/u/gokulananth1/</a></span>
+      </div>
+    </header>
+
+    <div class="section">
+      <div class="section-title">Career Objective</div>
+      <p class="item-desc">
+        Seeking an opportunity in a dynamic organization to apply my knowledge of front-end and back-end technologies in building scalable, secure, and user-friendly web applications. Passionate about problem-solving, optimizing performance, and continuously learning modern frameworks and tools to deliver innovative digital solutions.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Education</div>
+      <div class="item">
+        <div class="item-header">
+          <span>Paavai Engineering College</span>
+          <span>Completed in 2026</span>
+        </div>
+        <div class="item-sub">
+          <span>Bachelor of Engineering (CSE)</span>
+          <span class="badge">7.89 CGPA</span>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-header">
+          <span>Qspiders</span>
+          <span>Completed</span>
+        </div>
+        <div class="item-sub">
+          <span>Full Stack Java Development</span>
+          <span>Core & Advanced Java</span>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-header">
+          <span>Vinayaga Vidhyalaya Matric Higher Secondary School</span>
+          <span>2022</span>
+        </div>
+        <div class="item-sub">
+          <span>Higher Secondary Certificate (HSC)</span>
+          <span>62%</span>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-header">
+          <span>Vinayaga Vidhyalaya Matric Higher Secondary School</span>
+          <span>2020</span>
+        </div>
+        <div class="item-sub">
+          <span>Secondary School Leaving Certificate (SSLC)</span>
+          <span>91%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Technical Skills</div>
+      <div class="skills-grid">
+        <div class="skills-cat">Languages:</div>
+        <div class="skills-list">Java, JavaScript, SQL</div>
+
+        <div class="skills-cat">Frontend:</div>
+        <div class="skills-list">HTML5, CSS3, React.js, Tailwind CSS, Responsive Web Design</div>
+
+        <div class="skills-cat">Backend:</div>
+        <div class="skills-list">Core Java, Advanced Java, Node.js, Express.js, REST APIs</div>
+
+        <div class="skills-cat">Databases:</div>
+        <div class="skills-list">Oracle SQL, MySQL, MongoDB</div>
+
+        <div class="skills-cat">Tools & Platforms:</div>
+        <div class="skills-list">Git, GitHub, Linux, Postman, AWS (basic)</div>
+
+        <div class="skills-cat">Networking:</div>
+        <div class="skills-list">TCP/IP, Network Troubleshooting, Network Monitoring, Access Points</div>
+
+        <div class="skills-cat">Core Concepts:</div>
+        <div class="skills-list">Data Structures & Algorithms, Object-Oriented Programming, Collections Framework, Exception Handling, Multithreading</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Internships & Professional Experience</div>
+      <div class="item">
+        <div class="item-header">
+          <span>Networking Virtual Internship</span>
+          <span>Oct – Dec 2025 (10 Weeks)</span>
+        </div>
+        <div class="item-sub">
+          <span>AICTE, EduSkills & Zscaler | Domain: Networking</span>
+          <span class="badge">Zscaler Zero Trust</span>
+        </div>
+        <ul>
+          <li>Completed hands-on virtual training in networking fundamentals, enterprise networking concepts, OSI model, TCP/IP, and network security basics through Zscaler's Zero Trust security framework.</li>
+          <li>Gained cloud security awareness and practical knowledge of firewall policies and secure network architecture in enterprise environments.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <span>Machine Learning & Data Science Internship</span>
+          <span>Jan – Mar 2026 (10 Weeks)</span>
+        </div>
+        <div class="item-sub">
+          <span>EduSkills Academy | Domain: Machine Learning & Data Science</span>
+          <span class="badge">Credential Verified</span>
+        </div>
+        <ul>
+          <li>Completed end-to-end ML training covering Python (NumPy, Pandas), Scikit-learn, Data Visualization, NLP, SQL for Data Science, Flask Deployment, Power BI, and MLOps Basics.</li>
+          <li>Delivered a Customer Sentiment Analysis capstone project covering data preprocessing, feature engineering, model training and Flask-based deployment.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Certifications</div>
+      <div class="item">
+        <div class="item-header">
+          <span>Java Business Application Training</span>
+          <span>May 2025 | Score: 85%</span>
+        </div>
+        <div class="item-sub">
+          <span>Spoken Tutorial Project, IIT Bombay</span>
+          <span class="badge">IIT Bombay Verified</span>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-header">
+          <span>JNCIA-Junos - Juniper Networks Certified Associate, Junos</span>
+          <span>January 2026</span>
+        </div>
+        <div class="item-sub">
+          <span>HPE Juniper Networking, Education Services</span>
+          <span class="badge">Certified Associate</span>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-header">
+          <span>Introduction to Networking</span>
+          <span>December 2025</span>
+        </div>
+        <div class="item-sub">
+          <span>NVIDIA Academy</span>
+          <span class="badge">NVIDIA Accredited</span>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-header">
+          <span>Cybersecurity Fundamentals</span>
+          <span>February 2025</span>
+        </div>
+        <div class="item-sub">
+          <span>Johns Hopkins University (Coursera)</span>
+          <span class="badge">Verified Credential</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Key Projects</div>
+      <div class="item">
+        <div class="item-header">
+          <span>The Container Biryani - Restaurant Management System</span>
+          <span><a href="https://the-container-biryani.netlify.app/" target="_blank">Live Demo ↗</a></span>
+        </div>
+        <div class="item-desc">
+          Web-based Restaurant Management System designed for operational efficiency. Features real-time table management, digital menu integration, and automated inventory tracking. Built with React, Java Stack, and MySQL.
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-header">
+          <span>Veriprofile - Fake ID & Social Fraud Detector</span>
+          <span><a href="https://veriprofile-fake-id-detector.netlify.app/" target="_blank">Live Demo ↗</a></span>
+        </div>
+        <div class="item-desc">
+          Social media fake ID detector leveraging machine learning algorithms to analyze profile activity, engagement patterns, and metadata to identify fraudulent profiles.
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-header">
+          <span>Personal Portfolio</span>
+          <span><a href="https://gokul-a-personalportfolio.netlify.app/" target="_blank">Live Demo ↗</a></span>
+        </div>
+        <div class="item-desc">
+          High-performance, responsive portfolio with dark glassmorphism, Framer Motion animations, and modern UI showcasing engineering proficiencies.
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-header">
+          <span>Smart Bus Management System</span>
+          <span>AI / ML & GPS</span>
+        </div>
+        <div class="item-desc">
+          Intelligent transit solution using smartphone tracking and AI algorithms to predict real-time bus locations and accurate ETA arrival estimations.
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Extracurricular Activities & Leadership</div>
+      <div class="item">
+        <div class="item-header">
+          <span>Overall Coordinator - Youth Red Cross (Y.R.C)</span>
+        </div>
+        <div class="item-desc">
+          Orchestrated community service initiatives, blood donation drives, health awareness campaigns, and led student volunteer teams.
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-header">
+          <span>Workshops & Technical Presentations</span>
+        </div>
+        <div class="item-desc">
+          IoT Hands-on Workshop at HIT Chennai (06/04/2024); Paper Presentation on Virtual Reality at GCT Coimbatore (21/03/2025).
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
