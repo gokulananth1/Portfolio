@@ -468,7 +468,7 @@ const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => {
                 </div>
                 <p className="text-xs text-slate-400 mt-1">Paavai Engineering College</p>
                 <div className="mt-2 inline-block px-2.5 py-0.5 bg-purple-500/10 text-purple-300 rounded-full text-[11px] font-bold border border-purple-500/30">
-                  CGPA: 7.89
+                  CGPA: 7.82
                 </div>
               </div>
 
@@ -994,7 +994,7 @@ const App: React.FC = () => {
                       />
                     </div>
                     <div className="absolute -bottom-6 -right-4 sm:-bottom-8 sm:-right-8 glass p-6 sm:p-8 rounded-3xl shadow-2xl border border-white/10 backdrop-blur-xl">
-                      <div className="text-4xl sm:text-5xl font-black text-purple-400 mb-1">7.89</div>
+                      <div className="text-4xl sm:text-5xl font-black text-purple-400 mb-1">7.82</div>
                       <div className="text-[10px] sm:text-xs font-black uppercase tracking-widest text-slate-400">Pursuing CGPA</div>
                     </div>
                   </div>
@@ -1304,7 +1304,7 @@ const App: React.FC = () => {
                       title: "Bachelor of Engineering (CSE)", 
                       platform: "Paavai Engineering College", 
                       year: "Completed in 2026", 
-                      score: "7.89 CGPA" 
+                      score: "7.82 CGPA" 
                     },
                     { 
                       title: "Qspiders - Full Stack Java Development", 
