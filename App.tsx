@@ -468,7 +468,7 @@ const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => {
                 </div>
                 <p className="text-xs text-slate-400 mt-1">Paavai Engineering College</p>
                 <div className="mt-2 inline-block px-2.5 py-0.5 bg-purple-500/10 text-purple-300 rounded-full text-[11px] font-bold border border-purple-500/30">
-                  CGPA: 7.82
+                  CGPA: 7.89
                 </div>
               </div>
 
@@ -511,6 +511,17 @@ const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => {
                 <p className="text-xs text-slate-400 mb-2">EduSkills Academy | Verified Credential</p>
                 <p className="text-xs text-slate-300 leading-relaxed">
                   End-to-end ML pipeline with Python (NumPy, Pandas), Scikit-learn, NLP, Power BI, and Flask deployment of a Customer Sentiment Analysis capstone.
+                </p>
+              </div>
+
+              <div className="glass p-4 rounded-2xl border border-white/10">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
+                  <h6 className="font-black text-white uppercase">Junior Java Developer Internship</h6>
+                  <span className="text-xs text-amber-400 font-mono">Issued Oct 30, 2026 • Noida</span>
+                </div>
+                <p className="text-xs text-slate-400 mb-2">YuvaIntern (Henry Harvin® Education & NSDC) | Certificate No: YI/2026/141840/461117</p>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Completed Junior Java Developer Internship in Noida, demonstrating consistent dedication, technical professionalism, and commitment throughout the program.
                 </p>
               </div>
             </div>
@@ -602,6 +613,12 @@ const App: React.FC = () => {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success'>('idle');
   const [copied, setCopied] = useState(false);
   const [resumeModalOpen, setResumeModalOpen] = useState(false);
+  const [activeCertificate, setActiveCertificate] = useState<{
+    title: string;
+    organization: string;
+    credential: string;
+    url: string;
+  } | null>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -805,6 +822,24 @@ const App: React.FC = () => {
         "Delivered a Customer Sentiment Analysis capstone project covering data preprocessing, feature engineering, model training and Flask-based deployment."
       ],
       skills: ["Python (NumPy, Pandas)", "Scikit-learn", "NLP", "Flask Deployment", "Power BI", "SQL for Data Science", "Sentiment Analysis Capstone"]
+    },
+    {
+      title: "Junior Java Developer Internship",
+      organization: "YuvaIntern (Henry Harvin® Education & NSDC)",
+      domain: "Java Development",
+      period: "Issued October 30, 2026 • Noida",
+      credential: "Cert No: YI/2026/141840/461117",
+      certificateUrl: "/assets/aistudio/completion-letter-141840_461117_1794571223_061c6682.pdf",
+      icon: <Code2 className="w-6 h-6 text-amber-400" />,
+      accentGradient: "from-amber-500/15 via-orange-500/5 to-transparent",
+      borderColor: "border-amber-500/30",
+      glowColor: "rgba(245, 158, 11, 0.15)",
+      badgeColor: "bg-amber-500/10 text-amber-300 border-amber-500/30",
+      bullets: [
+        "Successfully completed the Junior Java Developer Internship with YuvaIntern (Henry Harvin® Education & NSDC) in Noida.",
+        "Demonstrated consistent dedication, professionalism, integrity, and a strong willingness to learn and contribute across Java development tasks."
+      ],
+      skills: ["Core Java", "Object-Oriented Programming", "Java Development", "Backend Engineering", "Problem Solving"]
     }
   ];
 
@@ -904,6 +939,67 @@ const App: React.FC = () => {
 
       <ResumeModal isOpen={resumeModalOpen} onClose={() => setResumeModalOpen(false)} />
 
+      {/* Certificate PDF Preview Modal */}
+      {activeCertificate && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-950/90 backdrop-blur-md">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            className="w-full max-w-4xl h-[88vh] glass rounded-3xl border border-white/10 overflow-hidden flex flex-col bg-slate-900/95 shadow-2xl"
+          >
+            <div className="p-4 sm:p-5 border-b border-white/10 flex flex-wrap items-center justify-between gap-3 bg-white/[0.02]">
+              <div className="flex items-center gap-3">
+                <div className="p-2 rounded-xl bg-amber-500/20 text-amber-400">
+                  <Award size={20} />
+                </div>
+                <div>
+                  <h3 className="text-base sm:text-lg font-black text-white uppercase tracking-tight">
+                    {activeCertificate.title}
+                  </h3>
+                  <p className="text-xs text-slate-400">
+                    {activeCertificate.organization} • {activeCertificate.credential}
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <a
+                  href={activeCertificate.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3.5 py-2 glass hover:bg-white/10 text-cyan-300 rounded-xl text-xs font-bold flex items-center gap-1.5 border border-cyan-500/30 transition-colors"
+                >
+                  <ExternalLink size={14} />
+                  <span>Open PDF</span>
+                </a>
+                <a
+                  href={activeCertificate.url}
+                  download="YuvaIntern_Junior_Java_Developer_Certificate.pdf"
+                  className="px-3.5 py-2 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-slate-950 rounded-xl text-xs font-black flex items-center gap-1.5 transition-all"
+                >
+                  <Download size={14} />
+                  <span>Download</span>
+                </a>
+                <button
+                  onClick={() => setActiveCertificate(null)}
+                  aria-label="Close certificate preview"
+                  className="p-2 rounded-full glass hover:bg-white/20 text-slate-300 hover:text-white transition-colors cursor-pointer"
+                >
+                  <X size={20} />
+                </button>
+              </div>
+            </div>
+            <div className="flex-1 bg-slate-950">
+              <iframe
+                src={activeCertificate.url}
+                title={`${activeCertificate.title} Certificate`}
+                className="w-full h-full border-0"
+              />
+            </div>
+          </motion.div>
+        </div>
+      )}
+
       {!loading && (
         <motion.div
           initial={{ opacity: 0 }}
@@ -994,7 +1090,7 @@ const App: React.FC = () => {
                       />
                     </div>
                     <div className="absolute -bottom-6 -right-4 sm:-bottom-8 sm:-right-8 glass p-6 sm:p-8 rounded-3xl shadow-2xl border border-white/10 backdrop-blur-xl">
-                      <div className="text-4xl sm:text-5xl font-black text-purple-400 mb-1">7.82</div>
+                      <div className="text-4xl sm:text-5xl font-black text-purple-400 mb-1">7.89</div>
                       <div className="text-[10px] sm:text-xs font-black uppercase tracking-widest text-slate-400">Pursuing CGPA</div>
                     </div>
                   </div>
@@ -1046,7 +1142,7 @@ const App: React.FC = () => {
             <div className="max-w-7xl mx-auto">
               <SectionHeader 
                 title="EXPERIENCE & INTERNSHIPS" 
-                subtitle="Practical enterprise experience across network security architecture and machine learning engineering." 
+                subtitle="Practical experience across Java development, network security architecture, and machine learning engineering." 
               />
               
               <div className="space-y-8">
@@ -1109,19 +1205,51 @@ const App: React.FC = () => {
                         ))}
                       </div>
 
-                      {/* Skill tags */}
-                      <div className="pt-6 border-t border-white/5 flex flex-wrap items-center gap-2">
-                        <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 mr-2 flex items-center gap-1">
-                          Key Competencies:
-                        </span>
-                        {internship.skills.map((skill, sIdx) => (
-                          <span
-                            key={sIdx}
-                            className="px-3 py-1 bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white rounded-full text-xs font-semibold border border-white/10 transition-colors"
-                          >
-                            {skill}
+                      {/* Skill tags & Certificate Link */}
+                      <div className="pt-6 border-t border-white/5 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 mr-2 flex items-center gap-1">
+                            Key Competencies:
                           </span>
-                        ))}
+                          {internship.skills.map((skill, sIdx) => (
+                            <span
+                              key={sIdx}
+                              className="px-3 py-1 bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white rounded-full text-xs font-semibold border border-white/10 transition-colors"
+                            >
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
+
+                        {'certificateUrl' in internship && internship.certificateUrl && (
+                          <div className="flex items-center gap-2 shrink-0">
+                            <button
+                              type="button"
+                              onClick={() =>
+                                setActiveCertificate({
+                                  title: internship.title,
+                                  organization: internship.organization,
+                                  credential: internship.credential,
+                                  url: internship.certificateUrl!
+                                })
+                              }
+                              className="px-4 py-2 glass hover:bg-white/10 text-amber-300 rounded-xl text-xs font-black uppercase tracking-wider flex items-center gap-2 border border-amber-500/30 transition-all cursor-pointer"
+                            >
+                              <FileText size={14} />
+                              <span>View Certificate</span>
+                            </button>
+                            <a
+                              href={internship.certificateUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="p-2 glass hover:bg-white/10 text-slate-300 hover:text-white rounded-xl border border-white/10 transition-colors"
+                              title="Open Certificate PDF in new tab"
+                              aria-label="Open Certificate PDF in new tab"
+                            >
+                              <ExternalLink size={14} />
+                            </a>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </motion.div>
@@ -1304,7 +1432,7 @@ const App: React.FC = () => {
                       title: "Bachelor of Engineering (CSE)", 
                       platform: "Paavai Engineering College", 
                       year: "Completed in 2026", 
-                      score: "7.82 CGPA" 
+                      score: "7.89 CGPA" 
                     },
                     { 
                       title: "Qspiders - Full Stack Java Development", 
