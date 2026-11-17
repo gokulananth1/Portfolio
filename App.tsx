@@ -829,7 +829,7 @@ const App: React.FC = () => {
       domain: "Java Development",
       period: "Issued October 30, 2026 • Noida",
       credential: "Cert No: YI/2026/141840/461117",
-      certificateUrl: "/assets/aistudio/completion-letter-141840_461117_1794571223_061c6682.pdf",
+      certificateUrl: "/assets/completion-letter.pdf",
       icon: <Code2 className="w-6 h-6 text-amber-400" />,
       accentGradient: "from-amber-500/15 via-orange-500/5 to-transparent",
       borderColor: "border-amber-500/30",
